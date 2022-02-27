@@ -13,6 +13,8 @@ router.get("/:id", skillsCtrl.show)
 // POST - localhost:3000/todos
 router.post("/", skillsCtrl.create)
 
+router.delete('/:id', skillsCtrl.delete)
+
 export {
   router
 }
