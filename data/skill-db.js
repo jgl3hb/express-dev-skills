@@ -1,7 +1,7 @@
 const skills = [
-  {text: 'Feed llama', done: true, _id: 125223},
-  {text: 'Sleep under the stars', done: false, _id: 127904},
-  {text: 'Buy milk', done: false, _id: 139608},
+  {text: 'HTML', done: true, _id: 125223},
+  {text: 'CSS', done: false, _id: 127904},
+  {text: 'Javascript', done: false, _id: 139608},
 ]
 
 const find = (conditions, callback) => {
@@ -22,22 +22,22 @@ const find = (conditions, callback) => {
 
 const findById = (id, callback) =>{
   try {
-    const todo = skills.find(todo => todo._id === parseInt(id))
-    if (!todo) throw new Error ('No todo was found')
-    return callback(null, todo)
+    const skill = skills.find(skill => skill._id === parseInt(id))
+    if (!skill) throw new Error ('No skill was found')
+    return callback(null, skill)
   } catch (error) {
     console.log(error)
     return callback(error, null)
   }
 }
 
-function create(todo, callback) {
+function create(skill, callback) {
   // Add the id
-  todo._id = Date.now() % 1000000
+  skill._id = Date.now() % 1000000
   // New todos wouldn't be done
-  todo.done = false
-  todos.push(todo)
-  return callback(null, todo)
+  skill.done = false
+  skills.push(skill)
+  return callback(null, skill)
 }
 
 export { 
