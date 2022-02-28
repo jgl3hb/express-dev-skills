@@ -31,6 +31,15 @@ const findById = (id, callback) =>{
   }
 }
 
+function create(skill, callback) {
+  // Add the id
+  skill._id = Date.now() % 1000000
+  // New todos wouldn't be done
+  skill.done = false
+  skills.push(skill)
+  return callback(null, skill)
+}
+
 function findByIdAndDelete(id, callback) {
   try {
     const idx = skills.findIndex(skill => skill._id == parseInt(id))
@@ -46,5 +55,5 @@ export {
 	find,
   findById,
   create,
-  findByIdAndDelete,
+  findByIdAndDelete
 }

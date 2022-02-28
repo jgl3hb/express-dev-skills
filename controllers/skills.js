@@ -11,6 +11,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
+  console.log(req.params.id)
   skillDb.findById(req.params.id, function (error, skill) {
     res.render('skills/show', {
       skill: skill,
